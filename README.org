@@ -14,7 +14,7 @@ Run the script and follow the script's instructions:
   ./setup.sh
 #+END_SRC
 
-After successfully running the script, drop any media files into the ~~/Videos~ folder. When you start the pi, it will automatically launch VLC in fullscreen and loop all of the media in ~~/Videos~.
+After successfully running the script, drop any media files into the =~/Videos= folder. When you start the pi, it will automatically launch VLC in fullscreen and loop all of the media in =~/Videos=.
 
 * License
 
