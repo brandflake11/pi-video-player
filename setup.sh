@@ -30,7 +30,7 @@ fi
 
 # Create the autostart file for the user for Wayland
 WAYFIRE="$HOME/.config/wayfire.ini"
-if grep -Fxq "$WAYFIRE" "[autostart]"
+if grep -Fxq "[autostart]" "$WAYFIRE"
 then
     echo "Not adding [autostart] to $WAYFIRE as an [autostart] block already exists. Please manually add it if needed."
 else
