@@ -7,6 +7,7 @@ read -rp "Press enter to continue"
 echo "Updating and installing essential programs"
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y mpv emacs
+echo 
 
 # Set the audio output to HDMI
 # Use pactl list short sinks to list options, but hopefully if using pi 4s the hardware is the same
@@ -35,8 +36,13 @@ sudo rfkill block 0
 
 # Install the teamviewer binary
 # Just going to download it, as it doesn't really work with wayland now
-echo "Downloading Teamviewer deb in case you need it."
-wget -p "$HOME/Downloads" https://download.teamviewer.com/download/linux/teamviewer-host_arm64.deb
+if [ ! -f "$HOME/Downloads/teamviewer-host_arm64.deb" ]
+then
+    echo "Downloading Teamviewer deb in case you need it."
+    wget -p "$HOME/Downloads" https://download.teamviewer.com/download/linux/teamviewer-host_arm64.deb
+else
+    echo "$HOME/Downloads/teamviewer-host_arm64.deb exists, not downloading it."
+fi
 # yes | sudo dpkg -i ~/Downloads/teamviewer-host_arm64.deb
 # Installs dependencies for teamviewer
 # sudo apt-get install -fy
