@@ -46,4 +46,6 @@ echo "Lastly, you need to enable VNC support"
 echo "A gui will appear. In it"
 echo "please go to |Interfaces| and toggle VNC"
 read -rp "Press enter to continue"
-rc-gui
+rc_gui
+echo "Thank you for using pi-video-player"
+echo "Please go to https://github.com/brandflake11/pi-video-player/issues for help with issues or to give feedback."
