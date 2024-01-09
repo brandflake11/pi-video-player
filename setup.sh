@@ -14,11 +14,10 @@ echo
 echo "Setting HDMI audio out as the default sound output"
 pactl set-default-sink 76
 
-# Create the autostart file for the user (not the system)
-
+# Create the autostart file for the user (not the system) for X11
 if [ ! -d "$HOME/.config/lxsession" ]
    then
-       echo "Creating autostart file"
+       echo "Creating X11 autostart file"
        mkdir "$HOME/.config/lxsession"
        mkdir "$HOME/.config/lxsession/LXDE-pi"
        cp -v /etc/xdg/lxsession/LXDE-pi/autostart "$HOME/.config/lxsession/LXDE-pi/"
@@ -26,7 +25,18 @@ if [ ! -d "$HOME/.config/lxsession" ]
        STARTUP="$HOME/.config/lxsession/LXDE-pi/autostart"
        echo "@vlc -L --no-osd -f $HOME/Videos" >> "$STARTUP"
 else
-    echo "$HOME/.config/lxsession/LXDE-pi/autostart exists, not creating the startup."
+    echo "$HOME/.config/lxsession/LXDE-pi/autostart exists, not creating the startup for X11."
+fi
+
+# Create the autostart file for the user for Wayland
+WAYFIRE="$HOME/.config/wayfire.ini"
+if grep -Fxq "$WAYFIRE" "[autostart]"
+then
+    echo "Not adding [autostart] to $WAYFIRE as an [autostart] block already exists. Please manually add it if needed."
+else
+    echo "Adding [autostart] $WAYFIRE"
+    echo "[autostart]" >> "WAYFIRE"
+    echo "while true; do vlc -L --no-osd -f $HOME/Videos; done"
 fi
 
 # Disabling Bluetooth, the top panel icon may not indicate correctly
