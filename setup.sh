@@ -35,6 +35,7 @@ then
     echo "Not adding [autostart] to $WAYFIRE as an [autostart] block already exists. Please manually add it if needed."
 else
     echo "Adding [autostart] to $WAYFIRE"
+    echo >> "$WAYFIRE"
     echo "[autostart]" >> "$WAYFIRE"
     echo "while true; do vlc -L --no-osd -f $HOME/Videos; done" >> "$WAYFIRE"
 fi
