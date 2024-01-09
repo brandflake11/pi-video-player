@@ -37,7 +37,7 @@ else
     echo "Adding [autostart] to $WAYFIRE"
     echo >> "$WAYFIRE"
     echo "[autostart]" >> "$WAYFIRE"
-    echo "while true; do vlc -L --no-osd -f $HOME/Videos; done" >> "$WAYFIRE"
+    echo "vlc = while true; do vlc -L --no-osd -f $HOME/Videos; done" >> "$WAYFIRE"
 fi
 
 # Disabling Bluetooth, the top panel icon may not indicate correctly
