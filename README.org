@@ -1,0 +1,21 @@
+* Pi Video Player
+
+This is a small script to help one quickly setup a Raspberry Pi 4 video player. It can be used for installation.
+
+* How to Use
+
+Run the script and follow the script's instructions:
+
+#+NAME: Setup pi-video-player
+#+BEGIN_SRC bash
+  git clone https://github.com/brandflake11/pi-video-player.git
+  cd pi-video-player
+  chmod +x setup.sh
+  ./setup.sh
+#+END_SRC
+
+After successfully running the script, drop any media files into the ~~/Videos~ folder. When you start the pi, it will automatically launch VLC in fullscreen and loop all of the media in ~~/Videos~.
+
+* License
+
+Pi Video Player is licensed under GPLv3. 
