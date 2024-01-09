@@ -28,6 +28,11 @@ else
     echo "$HOME/.config/lxsession/LXDE-pi/autostart exists, not creating the startup."
 fi
 
+# Disabling Bluetooth, the top panel icon may not indicate correctly
+# Also, hopefully hardware 0
+echo "Turning off bluetooth"
+sudo rfkill block 0
+
 # Install the teamviewer binary
 # Just going to download it, as it doesn't really work with wayland now
 echo "Downloading Teamviewer deb in case you need it."
