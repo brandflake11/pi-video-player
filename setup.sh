@@ -60,7 +60,9 @@ fi
 # sudo apt-get install -fy
 # teamviewer &
 
-echo "Lastly, you need to enable VNC support and set a 192.168.2.4-255 address"
+echo "Set an Ethernet IP Address within the 192.168.2.4-255 range."
+read -rp "Press enter to continue"
+echo "Lastly, you need to enable VNC support"
 echo "A gui will appear. In it"
 echo "please go to |Interfaces| and toggle VNC"
 read -rp "Press enter to continue"
